@@ -1,0 +1,1 @@
+This is the Readme for the course Design Principles and Design Patterns in JavaScript
