@@ -1,1 +1,1 @@
-#Using simple inheritance with JavaScript
+# Using simple inheritance with JavaScript
