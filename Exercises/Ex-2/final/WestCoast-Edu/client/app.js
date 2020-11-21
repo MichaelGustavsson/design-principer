@@ -79,6 +79,113 @@ function addClickEvent(elem, courseNo) {
     const course = courses.find((course) => course.courseNumber === courseNo);
     modal.querySelector('.modal-header').innerHTML = `${course.title}`;
     modal.querySelector('.details').innerHTML = `${course.description}`;
-    modal.querySelector('.sub-details').innerHTML = `Kurslängd ${course.duration} timmar`;
+    modal.querySelector(
+      '.sub-details'
+    ).innerHTML = `Kurslängd ${course.duration} timmar`;
   });
+}
+
+/* Exercise 2. */
+//Adding Inheritance...
+class Person {
+  constructor(birtDate, email, firstName, lastName, phone) {
+    this.birtDate = birtDate;
+    this.email = email;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phone = phone;
+  }
+}
+
+class Teacher extends Person {
+  constructor(birtDate, email, firstName, lastName, phone, expertise) {
+    super(birtDate, email, firstName, lastName, phone);
+    this.expertise = expertise;
+  }
+}
+class Student extends Person {
+  constructor(birtDate, email, firstName, lastName, phone, studentId) {
+    super(birtDate, email, firstName, lastName, phone);
+    this.studentId = studentId;
+  }
+}
+class Employee extends Person {
+  constructor(
+    birtDate,
+    email,
+    firstName,
+    lastName,
+    phone,
+    hireDate,
+    employeeNumber
+  ) {
+    super(birtDate, email, firstName, lastName, phone);
+    this.hireDate = hireDate;
+    this.employeeNumber = employeeNumber;
+  }
+}
+
+const student = new Student(
+  '1989-01-10',
+  'nisse@gmail.com',
+  'Nils',
+  'Olsson',
+  '070-1234567',
+  '657'
+);
+const employee = new Employee(
+  '1987-11-16',
+  'eva.eriksson@mail.com',
+  'Eva',
+  'Eriksson',
+  '0705-323432',
+  '2012-05-01',
+  'A1001'
+);
+
+const teachers = [];
+
+teachers.push(
+  new Teacher(
+    '1958-02-13',
+    'ulf.bilting@hotmail.com',
+    'Ulf',
+    'Bilting',
+    '072-808876',
+    ['Java', 'C++', 'C']
+  ),
+  new Teacher(
+    '1964-02-20',
+    'michael.gustavsson@gmail.com',
+    'Michael',
+    'Gustavsson',
+    '072-111111',
+    ['C++', 'JavaScript', 'TypeScript','Angular', 'React', 'MSSQL']
+  ),
+  new Teacher(
+    '1977-01-10',
+    'mikael.zetterstrom@hotmail.com',
+    'Mikael',
+    'Zetterström',
+    '072-222222',
+    ['C', 'C++']
+  ),
+  new Teacher(
+    '1943-10-23',
+    'ulf.malmstrom@hotmail.com',
+    'Ulf',
+    'Malmström',
+    '072-33333',
+    ['Visual Basic', 'Access', 'Excel']
+  ),
+);
+console.log(student, employee, teachers);
+
+const teacherElem = document.querySelector('.teachers');
+
+for(let teacher of teachers){
+  teacherElem.insertAdjacentHTML(
+    'beforeend',
+    `<p class="teacher-list">${teacher.firstName} ${teacher.lastName} (${teacher.expertise})</p>`
+  );
 }
