@@ -95,12 +95,20 @@ class Person {
     this.lastName = lastName;
     this.phone = phone;
   }
+
+  displayInfo(){
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
 class Teacher extends Person {
   constructor(birtDate, email, firstName, lastName, phone, expertise) {
     super(birtDate, email, firstName, lastName, phone);
     this.expertise = expertise;
+  }
+
+  displayInfo() {
+    return `${this.firstName} ${this.lastName} (${this.expertise})`;
   }
 }
 class Student extends Person {
@@ -186,6 +194,6 @@ const teacherElem = document.querySelector('.teachers');
 for(let teacher of teachers){
   teacherElem.insertAdjacentHTML(
     'beforeend',
-    `<p class="teacher-list">${teacher.firstName} ${teacher.lastName} (${teacher.expertise})</p>`
+    `<p class="teacher-list">${teacher.displayInfo()}</p>`
   );
 }
