@@ -1,1 +1,1 @@
-# Using simple inheritance with JavaScript
+# Simple implementation of Module pattern
