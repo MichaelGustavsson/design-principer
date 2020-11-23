@@ -88,8 +88,8 @@ function addClickEvent(elem, courseNo) {
 /* Exercise 2. */
 //Adding Inheritance...
 class Person {
-  constructor(birtDate, email, firstName, lastName, phone) {
-    this.birtDate = birtDate;
+  constructor(birthDate, email, firstName, lastName, phone) {
+    this.birthDate = birthDate;
     this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -102,8 +102,8 @@ class Person {
 }
 
 class Teacher extends Person {
-  constructor(birtDate, email, firstName, lastName, phone, expertise) {
-    super(birtDate, email, firstName, lastName, phone);
+  constructor(birthDate, email, firstName, lastName, phone, expertise) {
+    super(birthDate, email, firstName, lastName, phone);
     this.expertise = expertise;
   }
 
@@ -112,14 +112,14 @@ class Teacher extends Person {
   }
 }
 class Student extends Person {
-  constructor(birtDate, email, firstName, lastName, phone, studentId) {
-    super(birtDate, email, firstName, lastName, phone);
+  constructor(birthDate, email, firstName, lastName, phone, studentId) {
+    super(birthDate, email, firstName, lastName, phone);
     this.studentId = studentId;
   }
 }
 class Employee extends Person {
   constructor(
-    birtDate,
+    birthDate,
     email,
     firstName,
     lastName,
@@ -127,7 +127,7 @@ class Employee extends Person {
     hireDate,
     employeeNumber
   ) {
-    super(birtDate, email, firstName, lastName, phone);
+    super(birthDate, email, firstName, lastName, phone);
     this.hireDate = hireDate;
     this.employeeNumber = employeeNumber;
   }

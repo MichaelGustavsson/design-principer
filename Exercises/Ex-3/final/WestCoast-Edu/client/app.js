@@ -85,18 +85,33 @@ function addClickEvent(elem, courseNo) {
   });
 }
 
+// Teacher as Module Pattern.
 const teacher = (function () {
+
+  /* Private part... */
   const teachers = [];
 
-  const addTeacher = function(birthDate, email, firstName, lastName, phone, expertise) {    
+  const pushTeacher = function(birthDate, email, firstName, lastName, phone, expertise) {    
     teachers.push({birthDate, email, firstName, lastName, phone, expertise});
   }
+  /* End of private part */
 
+  // Public API...
   return {
-    addTeacher: addTeacher,
+    addTeacher: pushTeacher,
     teachers: teachers
   };
 })();
+
+//Does not work!!!
+// teacher.pushTeacher(
+//   '1958-02-13',
+//   'ulf.bilting@hotmail.com',
+//   'Ulf',
+//   'Bilting',
+//   '072-808876',
+//   ['Java', 'C++', 'C']
+// );
 
 teacher.addTeacher(
   '1958-02-13',
@@ -132,6 +147,8 @@ teacher.addTeacher(
   '072-33333',
   ['Visual Basic', 'Access', 'Excel']
 );
+
+//console.log(teacher.teachers);
 
 const teacherElem = document.querySelector('.teachers');
 

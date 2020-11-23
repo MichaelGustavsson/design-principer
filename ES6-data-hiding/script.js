@@ -1,5 +1,5 @@
-class Vehicle{
-  constructor(make, model, modelYear, mileage){
+class Vehicle {
+  constructor(make, model, modelYear, mileage) {
     let _speed = 80;
 
     //Encapsulating the values from the constructor
@@ -13,38 +13,36 @@ class Vehicle{
     this.getModel = () => _model;
     this.getModelYear = () => _modelYear;
     this.getMileage = () => _mileage;
-    
-    //Encapsulated function for increasing the speed.
-    this.accelerate = (speed) => { _speed += speed; }
-    this.getSpeed = () => _speed;
 
+    //Encapsulated function for increasing the speed.
+    this.accelerate = (speed) => {
+      _speed += speed;
+    };
+    this.getSpeed = () => _speed;
   }
-  
-  //Public getters for accessing the internal state of the object...
-  get make() {
-    return this.make();
+
+  get make(){
+    return this.getMake();
   }
-  get model() {
+  get model(){
     return this.getModel();
   }
-  get modelYear() {
-    return this.getModelYear();
-  }
-  get mileage() {
+  get mileage(){
     return this.getMileage();
   }
-  get speed() {
+  get speed(){
     return this.getSpeed();
   }
 }
 
 const volvo = new Vehicle('Volvo', 'XC90', 2019, 1500);
 
-console.log(volvo);
+console.log(volvo.make);
+console.log(volvo.model);
 volvo.mileage = 20500;
-console.log(volvo.getMileage());
-console.log(volvo);
-
+console.log(volvo.mileage);
+console.log(volvo.speed);
 volvo.accelerate(20);
-console.log(volvo.getSpeed());
+console.log(volvo.speed);
+console.log(volvo);
 
