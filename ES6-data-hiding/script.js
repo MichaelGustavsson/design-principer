@@ -1,4 +1,4 @@
-class Vehicle {
+class Vehicle {  
   constructor(make, model, modelYear, mileage) {
     let _speed = 80;
 
@@ -37,9 +37,9 @@ class Vehicle {
 
 const volvo = new Vehicle('Volvo', 'XC90', 2019, 1500);
 
+console.log(volvo.getMake());
 console.log(volvo.make);
 console.log(volvo.model);
-volvo.mileage = 20500;
 console.log(volvo.mileage);
 console.log(volvo.speed);
 volvo.accelerate(20);
