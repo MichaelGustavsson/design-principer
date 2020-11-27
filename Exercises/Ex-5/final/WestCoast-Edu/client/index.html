@@ -13,12 +13,7 @@
       <p class="brand"><a href="index.html">WestCoast Education</a></p>
     </nav>
   </header>
-  <div class="modal hidden">
-    <button class="btn-close-modal">&times;</button>
-    <h2 class="modal-header">Kurs detaljer</h2>
-    <div class="details">Detaljer</div>
-    <small class="sub-details">Kurslängd</small>
-  </div>
+  <div class="modal hidden"></div>
   <div class="container">    
     <div class="courses">
       <table>
@@ -33,15 +28,14 @@
       </table>
     </div>
     <div class="marketing-area">
-      <div class="teachers-display">
-        <h2>Våra lärare</h2>
-        <div class="teachers"></div>
-      </div>
+      <div class="teachers-display"></div>        
     </div>
   </div>    
 
   <div class="overlay hidden"></div>
   <script type="module" src="./controllers/courses-controller.js"></script>
+  <script type="module" src="./controllers/teachers-controller.js"></script>
+  <script type="module" src="./controllers/dialog-controller.js"></script>
   <!-- <script src="app.js"></script> -->
 </body>
 </html>

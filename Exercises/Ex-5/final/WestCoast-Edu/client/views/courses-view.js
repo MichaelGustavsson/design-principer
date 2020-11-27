@@ -1,19 +1,27 @@
 class CourseListView {
   _parentElement = document.querySelector('.course-list');
-  _data;
 
   addHandlerRender(subscriber) {
     ['load'].forEach((e) => window.addEventListener(e, subscriber));
   }
 
-  render(data) {
-    this._data = data;
-    let markup = this._data.map(this._generateMarkup).join('');
-    this._parentElement.insertAdjacentHTML('beforeend', markup);
+  addHandlerClickRow(subscriber) {
+    const rows = this._parentElement.querySelectorAll('tr');
+    rows.forEach((row) => {
+      const { courseno } = row.dataset;
+      row.addEventListener('click', (e) => {
+        subscriber(courseno);
+      });
+    });
   }
 
-  _generateMarkup(data) {
-    return `<tr><td>${data.courseNumber}</td><td>${data.title}</td><td>${data.duration}</td></tr>`;
+  renderCourses(data) {
+    let markup = data.map(this._generateMarkup).join('');
+    this._parentElement.insertAdjacentHTML('beforeend', markup);        
+  }
+
+  _generateMarkup(row) {
+    return `<tr data-courseno=${row.courseNumber}><td>${row.courseNumber}</td><td>${row.title}</td><td>${row.duration}</td></tr>`;
   }
 }
 

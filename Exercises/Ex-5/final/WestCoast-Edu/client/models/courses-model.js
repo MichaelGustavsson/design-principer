@@ -1,7 +1,8 @@
 import {Course} from './course-model.js';
 
 export const state = {
-  courses: []
+  courses: [],
+  course: {}
 };
 
 export const loadCourses = function() {
@@ -37,4 +38,8 @@ export const loadCourses = function() {
       50
     )
   );
+}
+
+export const findCourse = function(courseNo) {
+  state.course = state.courses.find((course) => course.courseNumber === courseNo);
 }
