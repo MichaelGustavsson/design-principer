@@ -9,16 +9,18 @@ const coursesController =  function() {
   model.loadCourses();
   // 2. Rendering the courses list.
   courseListView.renderCourses(model.state.courses);
-  // 3. Connect to the views publisher.
+  // 3. Connect to the views publisher. Subscriber...
   courseListView.addHandlerClickRow(CoursesDetails);
 };
 
 const CoursesDetails = function(courseNo){
   model.findCourse(courseNo);
   CourseDetailView.renderDialog(model.state.course);
+  //Subscribe to close dialog...
   CourseDetailView.addHandlerCloseDialog(dialogController.closeDialog);
 }
 const init = function() {
+  //Subscriber...
   courseListView.addHandlerRender(coursesController);  
 };
 

@@ -3,6 +3,7 @@ class CourseDetailView {
   _overlay = document.querySelector('.overlay');
   _data;
 
+  // Publisher...
   addHandlerCloseDialog(subscriber) {
     const closeBtn = this._parentElememt.querySelector('.btn-close-modal');
     closeBtn.addEventListener('click', () => subscriber());
