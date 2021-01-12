@@ -5,7 +5,7 @@ describe("Calculator", () => {
     calc = new Calculator();
 
     jasmine.addMatchers({
-      toMatch: function (x, y) {
+      toBeBetween: function (x, y) {
         return {
           compare: function (actual, expected1, expected2) {
             return {              
@@ -32,6 +32,6 @@ describe("Calculator", () => {
 
   //Extra special uppgift...
   it("should be able to divide a rational number", () => {
-    expect(calc.divide(1, 3)).toMatch(0.3, 0.4);
+    expect(calc.divide(1, 3)).toBeBetween(0.3, 0.4);
   });
 });
